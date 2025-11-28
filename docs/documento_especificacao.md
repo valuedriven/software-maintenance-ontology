@@ -15,15 +15,13 @@ OWL 2.
 
 ## Usuários e usos pretendidos
 
-Partes interessadas internas à Empresa XPTO:
-- Gestores de processo da Empresa XPTO: manter a ontologia e garantir implementação no Redmine.
+- Gestores de processo: manter a ontologia e garantir implementação no Redmine.
 - Analistas executores do processo de manutenção de software: validar e aplicar a ontologia.
 
 ## Requisitos de ontologia
 
 ### Requisitos não funcionais
 
-- Atender aos requisitos definidos pela alta direção.
 - Permitir a implementação na ferramenta de gestão de demandas (Redmine).
 
 ### Requisitos funcionais (questões de competência)
