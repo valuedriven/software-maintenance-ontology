@@ -21,9 +21,7 @@ A ontologia aqui descrita pode ser aplicada em ambientes de suporte, engenharia 
 
 ```
 ├── docs/               # Documentação detalhada da ontologia
-├── ontology/           # Arquivos OWL/RDF
-├── examples/           # Exemplos de instâncias e consultas SPARQL
-├── scripts/            # Scripts para validação ou transformação
+├── src/           # Arquivos OWL/RDF
 └── README.md           # Documento atual
 ```
 
@@ -35,13 +33,12 @@ A ontologia inclui classes e propriedades para representar:
 
 ### **📘 Classes Principais**
 
-* **ChangeRequest** – Solicitações de mudança ou chamados.
-* **Artifact** – Artefatos manipulados (código, documentos, requisitos).
-* **Task** – Atividades executadas durante a manutenção.
-* **Actor** – Pessoas ou papéis envolvidos.
-* **MaintenanceType** – Tipos de manutenção (corretiva, evolutiva, perfectiva, adaptativa).
+* **Solicitacação de Mudança** – Solicitações de mudança ou chamados. Tipos de manutenção (corretiva, evolutiva, perfectiva, adaptativa).
+* **Produto de Trabalho** – Artefatos manipulados (código, documentos, requisitos).
+* **Tarefa** – Atividades executadas durante a manutenção.
+* **Papel** – Pessoas ou papéis envolvidos.
 * **ImpactLevel** – Grau de impacto da mudança.
-* **SystemModule** – Componentes do sistema afetados.
+* **Funcionalidade** – Componentes do sistema afetados.
 
 ### **🔗 Propriedades Principais**
 
@@ -58,7 +55,6 @@ A ontologia inclui classes e propriedades para representar:
 * **OWL 2** para modelagem ontológica.
 * **Protégé** para edição.
 * **RDF/XML, Turtle** como formatos de serialização.
-* **SHACL** para regras de validação (opcional).
 
 ---
 
@@ -67,16 +63,14 @@ A ontologia inclui classes e propriedades para representar:
 ### **Visualizar a Ontologia**
 
 1. Instale o [Protégé](https://protege.stanford.edu/)
-2. Abra o arquivo em `ontology/*.owl`
+2. Abra o arquivo em `src/*.owl`
 3. Navegue pelas classes, propriedades e restrições.
-
-### **Integrar com seu Sistema**
-
-Exemplos de integração podem ser encontrados na pasta `examples/`.
 
 ---
 
 ## 📜 Exemplos de Consultas SPARQL
+
+(futuro...)
 
 ```sparql
 PREFIX ont: <http://example.com/ontology#>
