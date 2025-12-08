@@ -18,6 +18,9 @@
         <Class IRI="#acao_corretiva"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#acompanhar_melhorias"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#acompanhar_operacao"/>
     </Declaration>
     <Declaration>
@@ -48,6 +51,12 @@
         <Class IRI="#atividade"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#atividade_processo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#atividade_produto"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ativo_processo"/>
     </Declaration>
     <Declaration>
@@ -57,16 +66,16 @@
         <Class IRI="#build"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#capacitacao"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#codigo_fonte"/>
     </Declaration>
     <Declaration>
         <Class IRI="#construir_solucao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#criar_backlog_iteracao"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#definir_mecanismo_tomada_decisoes"/>
+        <Class IRI="#definir_diretrizes_tomada_decisoes"/>
     </Declaration>
     <Declaration>
         <Class IRI="#desenhar_solucao"/>
@@ -105,10 +114,10 @@
         <Class IRI="#executar_tomada_decisoes"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#gerenciar_acoes_corretivas"/>
+        <Class IRI="#funcionalidade"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#gerenciar_acoes_corretivas_operacao"/>
+        <Class IRI="#gerenciar_acoes_corretivas"/>
     </Declaration>
     <Declaration>
         <Class IRI="#gerenciar_capacitacao"/>
@@ -159,9 +168,6 @@
         <Class IRI="#gerente_projetos"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#identificar_necessidades_capacitacao"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#implantar_ambiente_producao"/>
     </Declaration>
     <Declaration>
@@ -172,9 +178,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#manter_ativos_processo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#manter_plano_melhorias"/>
     </Declaration>
     <Declaration>
         <Class IRI="#manutencao_adaptativa"/>
@@ -192,7 +195,10 @@
         <Class IRI="#manutencao_preventiva"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#planejar_backlog"/>
+        <Class IRI="#modulo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#planejar_capacitacao"/>
     </Declaration>
     <Declaration>
         <Class IRI="#planejar_configuracao"/>
@@ -207,7 +213,13 @@
         <Class IRI="#planejar_medicoes"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#planejar_melhorias"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#planejar_operacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#planejar_projeto"/>
     </Declaration>
     <Declaration>
         <Class IRI="#planejar_testes"/>
@@ -240,7 +252,19 @@
         <Class IRI="#processo_software"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#produto_software"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#produto_trabalho"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#produto_trabalho_processo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#produto_trabalho_produto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#realizar_capacitacao"/>
     </Declaration>
     <Declaration>
         <Class IRI="#realizar_estimativa"/>
@@ -252,9 +276,6 @@
         <Class IRI="#realizar_testes_integracao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#realizar_treinamentos"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#realizar_triagem_solicitacao"/>
     </Declaration>
     <Declaration>
@@ -262,6 +283,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#registrar_solicitacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#relatorio_acompanhamento_melhorias"/>
     </Declaration>
     <Declaration>
         <Class IRI="#relatorio_acompanhamento_operacao"/>
@@ -288,19 +312,22 @@
         <Class IRI="#tarefa"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#tarefa_processo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tarefa_produto"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#testador"/>
     </Declaration>
     <Declaration>
         <Class IRI="#testar_solucao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#tratar_metricas"/>
+        <Class IRI="#tratar_medicoes"/>
     </Declaration>
     <Declaration>
         <Class IRI="#tratar_solicitacao"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#treinamento"/>
     </Declaration>
     <Declaration>
         <Class IRI="#validar_requisitos"/>
@@ -311,89 +338,1520 @@
     <Declaration>
         <AnnotationProperty IRI="#responsavelDefinicao"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tarefa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#acao_corretiva"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#acompanhar_melhorias"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#acompanhar_melhorias"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#acompanhar_operacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_operacao_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_operacoes"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#acompanhar_projeto"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_entrega"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#acompanhar_relacionamento_cliente"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_operacao_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#acompanhar_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_operacoes"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#analisar_solicitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#atender_solicitacao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#analista_capacitacao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#realizar_capacitacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#analista_metricas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tratar_medicoes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#analista_requisitos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#especificar_requisitos"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#analista_suporte"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tratar_solicitacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#atender_solicitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_operacao_servicos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#atividade"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#processo_software"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#atividade_processo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#processo_software"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#atividade_produto"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#processo_software"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ativo_processo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#manter_ativos_processo"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#auditar_baselines"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_configuracao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_configuracao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_configuracao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#build"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#construir_solucao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#capacitacao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#realizar_capacitacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#codigo_fonte"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#implementar_solucao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#construir_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#implementar_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#codigo_fonte"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#build"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#desenvolvedor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#definir_diretrizes_tomada_decisoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#ativo_processo"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#desenhar_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_projeto"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#desenho_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#desenvolvedor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#desenho_solucao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#desenhar_solucao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#desenvolvedor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#implementar_solucao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#desenvolver_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_entrega"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#entregar_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#testar_solucao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#especificacao_requisitos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#especificar_requisitos"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#especificacao_suplementar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#especificar_requisitos"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#especificacao_testes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_testes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#especificar_requisitos"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#refinar_entendimento"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#tratar_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solicitacao_mudanca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#especificacao_suplementar"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_requisitos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#executar_garantia_qualidade"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_garantia_qualidade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_garantia_qualidade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#funcionalidade"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#modulo"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_acoes_corretivas"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_operacao_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#acompanhar_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#acao_corretiva"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_operacoes"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_capacitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_organizacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_configuracoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_organizacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_processos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_decisoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_organizacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_processos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_medicoes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#desenvolver_solucao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_melhoria"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#gerenciar_organizacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_operacao_servicos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#gerenciar_servicos"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_oportunidades_melhoria"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#executar_garantia_qualidade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#acao_corretiva"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerenciar_processos"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_organizacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_capacitacao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_configuracao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_configuracao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_decisoes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#executar_tomada_decisoes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_operacoes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#acompanhar_operacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_organizacional"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_medicoes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_processos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_melhorias"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#gerente_projetos"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_projeto"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#implantar_ambiente_producao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#implantar_ambiente_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solucao_implantada"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#solucao_implantada"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#desenvolvedor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#implantar_ambiente_testes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#construir_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#build"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#solucao_implantada"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#desenvolvedor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#implementar_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#desenhar_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#desenho_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#codigo_fonte"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#desenvolvedor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manter_ativos_processo"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#ativo_processo"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manutencao_adaptativa"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manutencao_aperfeicoativa"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manutencao_corretiva"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manutencao_evolutiva"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#manutencao_preventiva"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#modulo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <Class IRI="#produto_software"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_capacitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_capacitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_configuracao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_configuracao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_configuracao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_entrega"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_entrega"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_garantia_qualidade"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_garantia_qualidade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_medicoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_medicoes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_melhorias"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_operacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_operacao_servicos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_operacoes"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_projeto"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#planejar_entrega"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#refinar_entendimento"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_projeto"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_projetos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#planejar_testes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#planejar_entrega"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_projeto"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_projeto"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#plano_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#testador"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_capacitacao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_capacitacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_configuracao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_configuracao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_garantia_qualidade"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_garantia_qualidade"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_medicoes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_medicoes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_melhorias"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_melhorias"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_operacao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_operacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_projeto"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_projeto"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#plano_testes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#planejar_testes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#processo_software"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <Class IRI="#atividade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <Class IRI="#produto_trabalho"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#produto_software"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <Class IRI="#modulo"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#produto_trabalho"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tarefa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#produto_trabalho_processo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tarefa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#produto_trabalho_produto"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#tarefa"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#realizar_capacitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_capacitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_capacitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#realizar_estimativa"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#refinar_entendimento"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#validar_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_requisitos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#realizar_testes_aceite"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#implantar_ambiente_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solucao_implantada"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#testador"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#realizar_testes_integracao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#implantar_ambiente_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solucao_implantada"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_testes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#testador"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#realizar_triagem_solicitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#atender_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#registrar_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solicitacao_mudanca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#solicitacao_mudanca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_suporte"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#refinar_entendimento"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#analisar_solicitacao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#registrar_solicitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#atender_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#acao_corretiva"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_operacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_suporte"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#relatorio_acompanhamento_melhorias"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#acompanhar_melhorias"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#relatorio_acompanhamento_operacao"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#acompanhar_operacao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#relatorio_garantia_qualidade"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#executar_garantia_qualidade"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#relatorio_testes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#realizar_testes_integracao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#relatorio_tomada_decisoes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#executar_tomada_decisoes"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#solicitacao_mudanca"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                <Class IRI="#tarefa"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+                <Class IRI="#funcionalidade"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#solucao_implantada"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#implantar_ambiente_producao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#solucao_implementada"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#implantar_ambiente_producao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#tarefa"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#atividade"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#produto_trabalho"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#produto_trabalho"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#testador"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
+            <Class IRI="#realizar_testes_integracao"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#testar_solucao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#desenvolver_solucao"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#tratar_medicoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_melhoria"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#planejar_medicoes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#plano_medicoes"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#relatorio_acompanhamento_melhorias"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#gerente_organizacional"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#tratar_solicitacao"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#atender_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#realizar_triagem_solicitacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#solicitacao_mudanca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#solicitacao_mudanca"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_suporte"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#validar_requisitos"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#refinar_entendimento"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#especificar_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#especificacao_requisitos"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <Class IRI="#especificacao_suplementar"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <Class IRI="#analista_requisitos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#acao_corretiva"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#acompanhar_melhorias"/>
+        <Class IRI="#tarefa_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#acompanhar_operacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#acompanhar_projeto"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#acompanhar_relacionamento_cliente"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#analisar_solicitacao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#analista_capacitacao"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#analista_metricas"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#analista_requisitos"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#analista_suporte"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#atender_solicitacao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#atividade"/>
         <Class IRI="http://purl.obolibrary.org/obo/APOLLO_SV_00000008"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#atividade_processo"/>
+        <Class IRI="#atividade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#atividade_produto"/>
+        <Class IRI="#atividade"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ativo_processo"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#auditar_baselines"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#build"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#capacitacao"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#codigo_fonte"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#construir_solucao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#criar_backlog_iteracao"/>
-        <Class IRI="#tarefa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#definir_mecanismo_tomada_decisoes"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#definir_diretrizes_tomada_decisoes"/>
+        <Class IRI="#tarefa_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#desenhar_solucao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#desenho_solucao"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#desenvolvedor"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#desenvolver_produto"/>
@@ -401,71 +1859,84 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#desenvolver_solucao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#entregar_solucao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#especificacao_requisitos"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#especificacao_suplementar"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#especificacao_testes"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#especificar_requisitos"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#executar_garantia_qualidade"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#executar_tomada_decisoes"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#funcionalidade"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_acoes_corretivas"/>
-        <Class IRI="#tarefa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#gerenciar_acoes_corretivas_operacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_capacitacao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_configuracoes"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_decisoes"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_medicoes"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gerenciar_medicoes"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="#gerenciar_organizacao"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
+                <Class IRI="#gerenciar_processos"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_melhoria"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_operacao_servicos"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_oportunidades_melhoria"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_organizacao"/>
@@ -473,7 +1944,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_processos"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerenciar_servicos"/>
@@ -481,51 +1952,43 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_configuracao"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_decisoes"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_operacoes"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_organizacional"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_processos"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#gerente_projetos"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#identificar_necessidades_capacitacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#implantar_ambiente_producao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#implantar_ambiente_testes"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#implementar_solucao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#manter_ativos_processo"/>
-        <Class IRI="#tarefa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#manter_plano_melhorias"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#manutencao_adaptativa"/>
@@ -548,116 +2011,144 @@
         <Class IRI="#solicitacao_mudanca"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#planejar_backlog"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#modulo"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planejar_capacitacao"/>
+        <Class IRI="#tarefa_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_configuracao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_entrega"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_garantia_qualidade"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_medicoes"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planejar_melhorias"/>
+        <Class IRI="#tarefa_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_operacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planejar_projeto"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#planejar_testes"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_capacitacao"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_configuracao"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_garantia_qualidade"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_medicoes"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_melhorias"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_operacao"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_projeto"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#plano_testes"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#processo_software"/>
         <Class IRI="http://purl.obolibrary.org/obo/APOLLO_SV_00000008"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#produto_software"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#produto_trabalho"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000310"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#produto_trabalho_processo"/>
+        <Class IRI="#produto_trabalho"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#produto_trabalho_produto"/>
+        <Class IRI="#produto_trabalho"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#realizar_capacitacao"/>
+        <Class IRI="#tarefa_processo"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#realizar_estimativa"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#realizar_testes_aceite"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#realizar_testes_integracao"/>
-        <Class IRI="#tarefa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#realizar_treinamentos"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#realizar_triagem_solicitacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#refinar_entendimento"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#registrar_solicitacao"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#relatorio_acompanhamento_melhorias"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#relatorio_acompanhamento_operacao"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_processo"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#relatorio_garantia_qualidade"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#relatorio_testes"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#relatorio_tomada_decisoes"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#solicitacao_mudanca"/>
@@ -665,49 +2156,53 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#solucao_implantada"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#solucao_implementada"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#tarefa"/>
         <Class IRI="http://purl.obolibrary.org/obo/APOLLO_SV_00000008"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#tarefa_processo"/>
+        <Class IRI="#tarefa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tarefa_produto"/>
+        <Class IRI="#tarefa"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#testador"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#testar_solucao"/>
-        <Class IRI="#atividade"/>
+        <Class IRI="#atividade_produto"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#tratar_metricas"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tratar_medicoes"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#tratar_solicitacao"/>
-        <Class IRI="#tarefa"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#treinamento"/>
-        <Class IRI="#produto_trabalho"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#validar_requisitos"/>
-        <Class IRI="#tarefa"/>
+        <Class IRI="#tarefa_produto"/>
     </SubClassOf>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#fonteDefinicao"/>
-        <IRI>#manutencao_corretiva</IRI>
-        <Literal>https://www.iso.org/obp/ui/en/#iso:std:iso-iec-ieee:14764:ed-3:v1:en</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="#responsavelDefinicao"/>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
         <IRI>#manutencao_corretiva</IRI>
         <Literal>Gestor processos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#manutencao_corretiva</IRI>
+        <Literal>https://www.iso.org/obp/ui/en/#iso:std:iso-iec-ieee:14764:ed-3:v1:en</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -716,8 +2211,13 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#planejar_melhorias</IRI>
+        <Literal>planejar_melhorias é uma tarefa cujos objetivos são planejar as melhorias do desempenho do processo incluindo: definir diretrizes para melhoria, criar plano de implementação de melhorias, identificar informações para gerência de processos, garantir recursos, definir autoridade e alinhamento, gerenciar riscos e oportunidades organizacionais</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#solicitacao_mudanca</IRI>
-        <Literal>solicitacao_mudanca é um continuante genericamente dependente que identifica e descreve mudanças propostas em um produto ou serviço.</Literal>
+        <Literal>solicitacao_mudanca é um documento que identifica e descreve mudanças propostas em um produto ou serviço.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
