@@ -339,20 +339,6 @@
         <AnnotationProperty IRI="#responsavelDefinicao"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
-            <Class IRI="#planejar_medicoes"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000442"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000056"/>
-            <Class IRI="#planejar_projeto"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#acao_corretiva"/>
         <Class IRI="#produto_trabalho_produto"/>
     </SubClassOf>
@@ -1625,15 +1611,7 @@
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <Class IRI="#atividade"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <Class IRI="#produto_trabalho"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -1916,16 +1894,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#solicitacao_mudanca"/>
-        <ObjectIntersectionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000054"/>
-                <Class IRI="#tarefa"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-                <Class IRI="#funcionalidade"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
+            <Class IRI="#funcionalidade"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#solucao_implantada"/>
